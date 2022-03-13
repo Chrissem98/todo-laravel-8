@@ -17,9 +17,9 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->string('title', 30);
             $table->string('description');
-            $table->enum('status', ['do', 'don\'t', 'loading']);
-            $table->timestamp('start');
-            $table->timestamp('end');
+            $table->enum('status', ['do', 'not', 'loading']);
+            $table->dateTime('start');
+            $table->dateTime('end');
             $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
